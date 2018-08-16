@@ -7,6 +7,11 @@ const Router = EmberRouter.extend({
 });
 
 Router.map(function() {
+  this.route('addword');
+  this.route('wordslist', function() {
+    this.route('edit');
+  });
+  this.route('game');
 });
 
 export default Router;

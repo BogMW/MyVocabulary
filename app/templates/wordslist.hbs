@@ -1,0 +1,20 @@
+<table class="table">
+  <thead>
+    <tr class="container row">
+      <th class="col-sm-1">#</th>
+      <th class="col-sm text-center">Word &#8593; &#8595;</th>
+      <th class="col-sm text-center">Translation</th>
+      <th class="col-sm-1"></th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each model as |word index|}}
+        <tr class="container row">
+            <td class="col-sm-1">{{index}}</td>
+            <td class="col-sm text-center">{{word.word}}</td>
+            <td class="col-sm text-center">{{word.translate}}</td>
+            <td class="col-sm-1"><button {{action 'deleteWord' word.id}} class="btn btn-outline-danger">Delete</button></td>
+        </tr>
+    {{/each}}
+  </tbody>
+</table>

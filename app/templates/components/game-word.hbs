@@ -1,0 +1,26 @@
+{{#each words as |word index|}}  
+{{/each}}
+
+<h3>Check your vocabulary</h3>
+<form id="checkWordForm" >
+    <div class="form-group">
+        <fieldset disabled>
+            <div class="form-group">
+                <label for="word">Enter translation for this word</label>
+                {{input value=word placeholder=randomWord.word class="form-control"}}
+            </div>
+        </fieldset>
+        <div class="form-group">
+            <label for="translate">Enter translate for this word</label>
+            {{input value=translate class="form-control"}}
+        </div> 
+        <button {{action "getRandomWord"}} class="btn btn-dark">Next word</button>
+    </div>
+</form>
+
+{{#if error}}
+    <div class="alert alert-danger" role="alert">
+    {{error}}
+    </div>
+{{/if}}
+
